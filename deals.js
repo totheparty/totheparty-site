@@ -202,10 +202,64 @@ function setupFinder() {
 
 function setupAlertForm() {
   const form = document.getElementById('alert-form');
-  form.addEventListener('submit', (e) => {
+  const emailInput = document.getElementById('alert-email');
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    document.getElementById('alert-form').hidden = true;
-    document.getElementById('alert-confirm').hidden = false;
+    const email = emailInput.value.trim();
+    if (!email) return;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'signing up...';
+
+    const payload = {
+      data: {
+        type: 'subscription',
+        attributes: {
+          profile: {
+            data: {
+              type: 'profile',
+              attributes: { email: email }
+            }
+          }
+        },
+        relationships: {
+          list: {
+            data: {
+              type: 'list',
+              id: 'Y7fWm8'
+            }
+          }
+        }
+      }
+    };
+
+    try {
+      const res = await fetch('https://a.klaviyo.com/client/subscriptions/?company_id=UpKESL', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'revision': '2023-12-15'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (res.ok || res.status === 202) {
+        document.getElementById('alert-form').hidden = true;
+        document.getElementById('alert-confirm').hidden = false;
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        alert("Something went wrong signing you up — please try again.");
+      }
+    } catch (err) {
+      console.error('Klaviyo signup error:', err);
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      alert("Something went wrong signing you up — please try again.");
+    }
   });
 }
 
