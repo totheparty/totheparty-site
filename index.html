@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToTheParty — cheap party holiday deals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo"><img src="images/logo-header.png" alt="ToTheParty" class="logo-img"></a>
+    <form class="header-search" id="header-search-form">
+      <span class="header-search-input-icon" aria-hidden="true">🔍</span>
+      <input type="search" id="header-search-input" placeholder="search deals…" aria-label="Search deals">
+    </form>
+    <nav class="main-nav">
+      <a href="#deals">deals</a>
+      <a href="about.html">about us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <svg class="hero-art" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <!-- laser beams -->
+  <g stroke-linecap="round" fill="none">
+    <line x1="60" y1="0" x2="230" y2="300" stroke="rgba(255,201,60,0.16)" stroke-width="1.5"/>
+    <line x1="140" y1="0" x2="260" y2="300" stroke="rgba(255,61,104,0.14)" stroke-width="1.5"/>
+    <line x1="220" y1="0" x2="200" y2="300" stroke="rgba(255,201,60,0.12)" stroke-width="1.5"/>
+    <line x1="300" y1="0" x2="230" y2="300" stroke="rgba(255,61,104,0.16)" stroke-width="1.5"/>
+    <line x1="380" y1="0" x2="260" y2="300" stroke="rgba(255,201,60,0.1)" stroke-width="1.5"/>
+  </g>
+  <!-- disco ball -->
+  <g transform="translate(210,60)">
+    <line x1="0" y1="-60" x2="0" y2="-30" stroke="rgba(255,248,240,0.2)" stroke-width="1.5"/>
+    <circle r="28" fill="none" stroke="rgba(255,248,240,0.28)" stroke-width="1.5"/>
+    <path d="M -28 0 A 28 28 0 0 1 28 0" fill="none" stroke="rgba(255,248,240,0.2)" stroke-width="1"/>
+    <path d="M -28 0 A 28 28 0 0 0 28 0" fill="none" stroke="rgba(255,248,240,0.2)" stroke-width="1"/>
+    <line x1="-28" y1="0" x2="28" y2="0" stroke="rgba(255,248,240,0.18)" stroke-width="1"/>
+    <line x1="0" y1="-28" x2="0" y2="28" stroke="rgba(255,248,240,0.18)" stroke-width="1"/>
+    <line x1="-19.8" y1="-19.8" x2="19.8" y2="19.8" stroke="rgba(255,248,240,0.12)" stroke-width="1"/>
+    <line x1="19.8" y1="-19.8" x2="-19.8" y2="19.8" stroke="rgba(255,248,240,0.12)" stroke-width="1"/>
+  </g>
+  <!-- dance floor grid, perspective -->
+  <g stroke="rgba(255,248,240,0.14)" stroke-width="1" fill="none">
+    <path d="M 60 380 L 210 300 L 360 380"/>
+    <path d="M 90 400 L 210 330 L 330 400"/>
+    <path d="M 120 415 L 210 355 L 300 415"/>
+    <line x1="210" y1="300" x2="210" y2="420"/>
+    <line x1="130" y1="335" x2="115" y2="420"/>
+    <line x1="290" y1="335" x2="305" y2="420"/>
+    <line x1="80" y1="365" x2="45" y2="420"/>
+    <line x1="340" y1="365" x2="375" y2="420"/>
+  </g>
+</svg>
+    <h1 class="hero-title">party <span class="hero-highlight">hard</span>, for less.</h1>
+    <div class="hero-divider"></div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num" id="stat-deals">—</span><span class="stat-label">live deals</span></div>
+      <div class="stat"><span class="stat-num" id="stat-lowest">—</span><span class="stat-label">from</span></div>
+      <div class="stat"><span class="stat-num">daily</span><span class="stat-label">updated</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="categories">
+  <div class="wrap">
+    <div class="category-row-wrap">
+    <div class="category-row" id="category-row">
+      <button type="button" class="category-btn" data-rating-shortcut="4">
+        <span class="category-icon">⭐</span>
+        <span class="category-label">top rated</span>
+      </button>
+      <button type="button" class="category-btn" data-board="All-inclusive">
+        <span class="category-icon">🍹</span>
+        <span class="category-label">all inclusive</span>
+      </button>
+      <button type="button" class="category-btn" data-budget-shortcut="300">
+        <span class="category-icon">💷</span>
+        <span class="category-label">under £300</span>
+      </button>
+      <button type="button" class="category-btn" data-tag-shortcut="last-minute">
+        <span class="category-icon">⚡</span>
+        <span class="category-label">last minute</span>
+      </button>
+      <button type="button" class="category-btn" data-tag-shortcut="hot">
+        <span class="category-icon">🔥</span>
+        <span class="category-label">hot deals</span>
+      </button>
+      <button type="button" class="category-btn" data-tag-shortcut="new">
+        <span class="category-icon">✨</span>
+        <span class="category-label">new deals</span>
+      </button>
+      <button type="button" class="category-btn" data-budget-shortcut="200">
+        <span class="category-icon">💰</span>
+        <span class="category-label">under £200</span>
+      </button>
+    </div>
+    <div class="category-fade" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<section class="finder" id="deals">
+  <div class="wrap">
+    <form class="finder-form" id="finder-form">
+      <div class="finder-card">
+        <div class="finder-row">
+          <span class="finder-row-icon">📍</span>
+          <div class="finder-row-body">
+            <label for="finder-destination">where to?</label>
+            <select id="finder-destination">
+              <option value="all">search destination</option>
+              <option value="Zante">zante</option>
+              <option value="Ibiza">ibiza</option>
+              <option value="Magaluf">magaluf</option>
+              <option value="Ayia Napa">ayia napa</option>
+              <option value="Kavos">kavos</option>
+              <option value="Malia">malia</option>
+              <option value="Malta">malta</option>
+            </select>
+          </div>
+        </div>
+        <div class="finder-row">
+          <span class="finder-row-icon">✈️</span>
+          <div class="finder-row-body">
+            <label for="finder-airport">flying from</label>
+            <select id="finder-airport">
+              <option value="all">any UK airport</option>
+              <option value="London Heathrow">London Heathrow</option>
+              <option value="London Gatwick">London Gatwick</option>
+              <option value="London Stansted">London Stansted</option>
+              <option value="London Luton">London Luton</option>
+              <option value="London City">London City</option>
+              <option value="Manchester">Manchester</option>
+              <option value="Birmingham">Birmingham</option>
+              <option value="Bristol">Bristol</option>
+              <option value="Edinburgh">Edinburgh</option>
+              <option value="Glasgow">Glasgow</option>
+              <option value="Newcastle">Newcastle</option>
+              <option value="Liverpool">Liverpool</option>
+              <option value="Leeds Bradford">Leeds Bradford</option>
+              <option value="East Midlands">East Midlands</option>
+              <option value="Cardiff">Cardiff</option>
+              <option value="Belfast International">Belfast International</option>
+              <option value="Belfast City">Belfast City</option>
+              <option value="Aberdeen">Aberdeen</option>
+              <option value="Southampton">Southampton</option>
+              <option value="Norwich">Norwich</option>
+              <option value="Exeter">Exeter</option>
+              <option value="Doncaster Sheffield">Doncaster Sheffield</option>
+            </select>
+          </div>
+        </div>
+        <div class="finder-row">
+          <span class="finder-row-icon">📅</span>
+          <div class="finder-row-body">
+            <label for="finder-month">when</label>
+            <select id="finder-month">
+              <option value="all">select month</option>
+              <option value="January">January</option>
+              <option value="February">February</option>
+              <option value="March">March</option>
+              <option value="April">April</option>
+              <option value="May">May</option>
+              <option value="June">June</option>
+              <option value="July">July</option>
+              <option value="August">August</option>
+              <option value="September">September</option>
+              <option value="October">October</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="finder-submit">🔍 find deals</button>
+    </form>
+    <p class="last-updated" id="last-updated"></p>
+  </div>
+</section>
+
+<section class="deals-section">
+  <div class="wrap">
+    <h2 class="sr-only">Browse party holiday deals</h2>
+    <div class="deals-grid" id="deals-grid"></div>
+    <p class="deals-empty" id="deals-empty" hidden>no deals match that combo right now — try loosening a filter.</p>
+    <nav class="pagination" id="pagination" aria-label="Deals pages"></nav>
+  </div>
+</section>
+
+<section class="popular">
+  <div class="wrap">
+    <h2>popular spots</h2>
+    <div class="popular-grid">
+      <a class="popular-card" href="zante.html" style="background-image: url('https://picsum.photos/seed/zante-hero/500/400')">
+        <span class="popular-name">zante</span>
+        <span class="popular-desc">laganas strip, boat parties, and beaches that look unreal in the morning after.</span>
+      </a>
+      <a class="popular-card" href="ibiza.html" style="background-image: url('https://picsum.photos/seed/ibiza-hero/500/400')">
+        <span class="popular-name">ibiza</span>
+        <span class="popular-desc">san antonio sunsets by day, superclubs by night — the original party island.</span>
+      </a>
+      <a class="popular-card" href="magaluf.html" style="background-image: url('https://picsum.photos/seed/magaluf-hero/500/400')">
+        <span class="popular-name">magaluf</span>
+        <span class="popular-desc">the strip, punta ballena, and a beach right in the middle of it all.</span>
+      </a>
+      <a class="popular-card" href="ayia-napa.html" style="background-image: url('https://picsum.photos/seed/ayianapa-hero/500/400')">
+        <span class="popular-name">ayia napa</span>
+        <span class="popular-desc">nissi beach by day, the strip by night — Cyprus's biggest party town.</span>
+      </a>
+      <a class="popular-card" href="kavos.html" style="background-image: url('https://picsum.photos/seed/kavos-hero/500/400')">
+        <span class="popular-name">kavos</span>
+        <span class="popular-desc">corfu's party capital — beach clubs, booze cruises, and a strip that never sleeps.</span>
+      </a>
+      <a class="popular-card" href="malia.html" style="background-image: url('https://picsum.photos/seed/malia-hero/500/400')">
+        <span class="popular-name">malia</span>
+        <span class="popular-desc">crete's answer to magaluf — a strip built for big nights out.</span>
+      </a>
+      <a class="popular-card" href="malta.html" style="background-image: url('https://picsum.photos/seed/malta-hero/500/400')">
+        <span class="popular-name">malta</span>
+        <span class="popular-desc">st julian's and paceville after dark, historic valletta and blue-lagoon boat trips by day.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="alerts" id="alerts">
+  <div class="wrap alerts-inner">
+    <h2>get the price drops first</h2>
+    <p>we'll ping your inbox when a deal goes stupid-cheap (we won't spam you)</p>
+    <form class="alert-form" id="alert-form">
+      <input type="email" placeholder="you@email.com" required id="alert-email">
+      <button type="submit">sign me up</button>
+    </form>
+    <p class="alert-confirm" id="alert-confirm" hidden>you're on the list. we'll be in touch.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><img src="images/logo-footer.png" alt="ToTheParty" class="logo-img logo-img-footer"></a>
+      <p>we compare holidays across every major travel site, so you don't have to. real prices, updated daily, no fluff.</p>
+    </div>
+    <div class="footer-links">
+      <span class="footer-heading">company</span>
+      <a href="about.html">about us</a>
+      <a href="work-with-us.html">work with us</a>
+      <a href="privacy.html">privacy policy</a>
+    </div>
+    <div class="footer-links">
+      <span class="footer-heading">follow</span>
+      <a href="https://tiktok.com" target="_blank" rel="noopener">tiktok</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">instagram</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="footer-copyright">© 2026 totheparty. all rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/deals.js"></script>
+</body>
+</html>
