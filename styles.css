@@ -908,8 +908,8 @@ a { text-decoration: none; color: inherit; }
   border-radius: 14px;
   padding: 16px 20px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-  z-index: 100;
-  display: flex;
+  z-index: 9999;
+  display: none;
   flex-wrap: wrap;
   align-items: center;
   gap: 14px;
@@ -940,6 +940,10 @@ a { text-decoration: none; color: inherit; }
   border: none;
   cursor: pointer;
 }
+.cookie-banner.visible {
+  display: flex;
+}
+
 #cookie-decline {
   background: transparent;
   color: rgba(255,248,240,0.7);

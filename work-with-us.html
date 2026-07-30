@@ -63,7 +63,7 @@
     <p class="footer-copyright">© 2026 totheparty. all rights reserved.</p>
   </div>
 </footer>
-<div class="cookie-banner" id="cookie-banner" hidden>
+<div class="cookie-banner" id="cookie-banner">
   <p>we use cookies to understand how people use this site. <a href="privacy.html">learn more</a></p>
   <div class="cookie-banner-actions">
     <button type="button" id="cookie-decline">decline</button>
@@ -75,7 +75,7 @@
   var consent = localStorage.getItem('cookie_consent');
   var banner = document.getElementById('cookie-banner');
   if (!consent) {
-    banner.hidden = false;
+    banner.classList.add('visible');
   } else if (consent === 'granted' && typeof gtag === 'function') {
     gtag('consent', 'update', { 'analytics_storage': 'granted' });
   }
@@ -87,13 +87,13 @@
       if (typeof gtag === 'function') {
         gtag('consent', 'update', { 'analytics_storage': 'granted' });
       }
-      banner.hidden = true;
+      banner.classList.remove('visible');
     });
   }
   if (declineBtn) {
     declineBtn.addEventListener('click', function() {
       localStorage.setItem('cookie_consent', 'denied');
-      banner.hidden = true;
+      banner.classList.remove('visible');
     });
   }
 })();
